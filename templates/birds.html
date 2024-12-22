@@ -1,0 +1,47 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{% static 'css/wild-style.css' %}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Birds Classification</title>
+</head>
+<body>
+    <div class="image-container">
+        <img src="{% static 'images/Chicken.jpg' %}" alt="Chicken" class="image Chicken">
+        <img src="{% static 'images/Crow.jpg' %}" alt="Crow" class="image Crow">
+        <img src="{% static 'images/Dove.jpg' %}" alt="Dove" class="image Dove">
+        <img src="{% static 'images/Duck.jpg' %}" alt="Duck" class="image Duck">
+        <img src="{% static 'images/Eagle.jpg' %}" alt="Eagle" class="image Eagle">
+        <img src="{% static 'images/Flamingo.jpg' %}" alt="Flamingo" class="image Flamingo">
+        <img src="{% static 'images/Gull.jpg' %}" alt="Gull" class="image Gull">
+        <img src="{% static 'images/Hummingbird.jpg' %}" alt="Hummingbird" class="image Hummingbird">
+        <img src="{% static 'images/Macaw.jpg' %}" alt="Macaw" class="image Macaw">
+        <img src="{% static 'images/Ostrich.jpg' %}" alt="Ostrich" class="image Ostrich">
+        <img src="{% static 'images/Owl.jpg' %}" alt="Owl" class="image Owl">
+        <img src="{% static 'images/Peacock.jpg' %}" alt="Peacock" class="image Peacock">
+        <img src="{% static 'images/Penguin.jpg' %}" alt="Penguin" class="image Penguin">
+        <img src="{% static 'images/Turkey.jpg' %}" alt="Turkey" class="image Turkey">
+        <img src="{% static 'images/Woodpecker.jpg' %}" alt="Woodpecker" class="image Woodpecker">
+    </div>
+    {% if prediction %}
+      <h3 id="predict" data-class="{{ prediction }}">{{ prediction }}</h3>
+    {% endif %}
+          
+    <div class="container">
+        <form method="post" enctype="multipart/form-data">
+          {% csrf_token %}
+          <div class="form">
+            <label for="image">Select image</label>
+            {{ form }}
+            <button class="classify" type="submit">Classify</button>
+          </div>
+          <img id="uploaded-image" src="" alt="">
+        </form>
+    </div>
+    <a class="back" href="{% url 'index' %}">Back to home page</a>
+</body>
+
+<script src="{% static 'js/birds-script.js' %}"></script>
+</html>

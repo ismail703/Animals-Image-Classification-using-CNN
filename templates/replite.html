@@ -1,0 +1,44 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{% static 'css/replite-styles.css' %}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+<body>
+     <div class="image-container">
+       <img src="{% static 'images/chameleon.jpg' %}" alt="Chameleon" class="image chameleon">
+       <img src="{% static 'images/crocodile.jpg' %}" alt="Crocodile" class="image crocodile">
+       <img src="{% static 'images/Frog.jpg' %}" alt="Frog" class="image frog">
+       <img src="{% static 'images/gecko.jpg' %}" alt="Gecko" class="image gecko">
+       <img src="{% static 'images/Igauna.jpg' %}" alt="Iguana" class="image iguana">
+       <img src="{% static 'images/kumodo_dragon.jpg' %}" alt="Kumodo Dragon" class="image kumodo_dragon">
+       <img src="{% static 'images/salamander.jpg' %}" alt="Salamandar" class="image salamander">
+       <img src="{% static 'images/snake.jpg' %}" alt="Snake" class="image snake">
+       <img src="{% static 'images/turtle.jpg' %}" alt="Turtle" class="image turtle">
+       <img src="{% static 'images/tuatara.jpg' %}" alt="Tutara" class="image tutara">
+     </div>
+
+     
+    {% if prediction %}  
+      <h3 id="predict" data-class="{{ prediction }}">{{ prediction }}</h3>          
+    {% endif %}
+             
+    <div class="container">
+        <form method="post" enctype="multipart/form-data">
+          {% csrf_token %}   
+          <div class="form">
+            <label for="image">Select image</label> 
+            {{ form }}  
+            <button class="classify" type="submit">Classify</button>
+          </div>
+          <img id="uploaded-image" src="" alt="" >
+        </form>
+    </div>
+    <a class="back" href="{% url 'index' %}">Back to home page</a>
+  </body>
+  
+  <script src="{% static 'js/reptile-script.js' %}"></script>
+</html>
