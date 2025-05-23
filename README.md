@@ -54,7 +54,7 @@ All category-specific classifiers are built with TensorFlow and deployed via a D
 
 * **Marine Species** (20):
   – Examples: dolphin, shark, sea turtle, clownfish, manta ray…
-  – **Dataset used:** [Marine Animal Dataset]([https://example.com/marine-dataset](https://www.kaggle.com/datasets/ismail703/marine-animals-dataset))
+  – **Dataset used:** [Marine Animal Dataset](https://www.kaggle.com/datasets/ismail703/marine-animals-dataset)
 
 * **Reptiles & Amphibians** (10):
   – Examples: crocodile, gecko, frog, salamander, iguana…
@@ -64,7 +64,7 @@ All category-specific classifiers are built with TensorFlow and deployed via a D
   – Examples: sparrow, eagle, parrot, penguin, flamingo…
   – **Dataset used:** [Bird Species Dataset](https://www.kaggle.com/datasets/elhaddadmohamed/birds-v4)
 
-* **Wild Mammals** (15):
+* **Wild Mammals** (21):
   – Examples: lion, tiger, elephant, bear, giraffe…
   – **Dataset used:** [Wild Mammals Dataset](https://www.kaggle.com/datasets/elhaddadmohamed/final-datasets-v2)
 
