@@ -1,0 +1,53 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{% static 'css/birds-styles.css' %}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zoo Classification</title>
+</head>
+<body>
+    <div class="image-container">
+        <img src="{% static 'images/bison1.jpg' %}" alt="Bison" class="image Bison">
+        <img src="{% static 'images/boar.jpg' %}" alt="WildBoar" class="image WildBoar">
+        <img src="{% static 'images/brown bear.jpg' %}" alt="BrownBear" class="image BrownBear">
+        <img src="{% static 'images/chetaah.png' %}" alt="Cheetah" class="image Cheetah">
+        <img src="{% static 'images/elephant.png' %}" alt="Elephant" class="image Elephant">
+        <img src="{% static 'images/fox.png' %}" alt="Fox" class="image Fox">
+        <img src="{% static 'images/gaz.jpg' %}" alt="Gazelle" class="image Gazelle">
+        <img src="{% static 'images/gir.png' %}" alt="Giraffe" class="image Giraffe">
+        <img src="{% static 'images/gor.jpg' %}" alt="Gorilla" class="image Gorilla">
+        <img src="{% static 'images/hippo.jpg' %}" alt="Hippo" class="image Hippo">
+        <img src="{% static 'images/horse.jpg' %}" alt="Horse" class="image Horse">
+        <img src="{% static 'images/hyena.png' %}" alt="Hyena" class="image Hyena">
+        <img src="{% static 'images/koala.png' %}" alt="Koala" class="image Koala">
+        <img src="{% static 'images/leo.jpg' %}" alt="Leopard" class="image Leopard">
+        <img src="{% static 'images/lion1.jpg' %}" alt="Lion" class="image Lion">
+        <img src="{% static 'images/meerkat.png' %}" alt="Meerkat" class="image Meerkat">
+        <img src="{% static 'images/porcupine.jpg' %}" alt="Porcupine" class="image Porcupine">
+        <img src="{% static 'images/rino.jpg' %}" alt="Rhino" class="image Rhino">
+        <img src="{% static 'images/tiger.jpg' %}" alt="Tiger" class="image Tiger">
+        <img src="{% static 'images/wolf_ti.jpg' %}" alt="TimberWolf" class="image TimberWolf">
+        <img src="{% static 'images/zebraa.jpg' %}" alt="Zebra" class="image Zebra">
+    </div>
+    
+    {% if prediction %}  
+      <h3 id="predict" data-class="{{ prediction }}">{{ prediction }}</h3>          
+    {% endif %}
+             
+    <div class="container">
+        <form method="post" enctype="multipart/form-data">
+          {% csrf_token %}   
+          <div class="form">
+            <label for="image">Select image</label> 
+            {{ form }}  
+            <button class="classify" type="submit">Classify</button>
+          </div>
+          <img id="uploaded-image" src="" alt="" >
+        </form>
+    </div>
+    <a class="back" href="{% url 'index' %}">Back to home page</a>
+</body>
+<script src="{% static 'js/wild-script.js' %}"></script>
+</html>
