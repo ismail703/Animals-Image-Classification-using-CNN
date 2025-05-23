@@ -3,7 +3,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="{% static 'css/marine-styles.css' %}">
+    <link rel="stylesheet" href="{% static 'css/marine-style.css' %}">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
         .classify {
@@ -13,23 +13,9 @@
     <title></title>
 </head>
 <body>
-    <!-- <div class="container">
-        <form method="post" enctype="multipart/form-data">
-            {% csrf_token %}
-            <label for="image">Select image</label>   
-            {{ form.as_p }} 
-            <button class="classify" type="submit">Classify</button>
-        </form>
-        <div id="image-container"></div>
-          {% if img_obj %}  
-          <p>The predicted class is: {{ prediction }}</p>          
-          <img src="{{ img_obj.image.url}}" alt="" >
-          {% endif %}
-
-    </div> -->
     {% if prediction %}
     <h3 id="predict" data-class="{{ prediction }}">{{ prediction }}</h3>
-  {% endif %}
+    {% endif %}
         
   <div class="container">
       <form method="post" enctype="multipart/form-data">
